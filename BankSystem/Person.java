@@ -23,9 +23,9 @@ public class Person {
 	public int getAge() {
 		return age;
 	}
-	
+
 	public void setCashAmount(int newCashAmount) {
-			cashAmount = newCashAmount;
+		cashAmount = newCashAmount;
 	}
 	
 	public int getCashAmount() {
@@ -38,5 +38,13 @@ public class Person {
 	
 	public void setAccount(BankAccount pAccount) {
 		account = pAccount;
+	}
+
+	public boolean transfer(Person to, int amount) {
+		return account.transfer(to.getAccount(), amount);
+	}
+
+	public boolean transfer(BankAccount to, int amount) {
+		return account.transfer(to, amount);
 	}
 }
