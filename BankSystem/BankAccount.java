@@ -3,7 +3,28 @@ package BankSystem;
 public class BankAccount {
 	private int balance; // 계좌 잔액
 	private Person owner;
-	
+
+	// 생성자
+	public BankAccount(int pBalance) {
+		if (pBalance < 0) {
+			balance = 0;
+		} else {
+			balance = pBalance;
+		}
+	}
+	public BankAccount(Person pOwner) {
+		owner = pOwner;
+		balance = 0;
+	}
+	public BankAccount(int pBalance, Person pOwner) {
+		if (pBalance < 0) {
+			balance = 0;
+		} else {
+			balance = pBalance;
+		}
+		owner = pOwner;
+	}
+
 	public void setBalance(int pBalance) {
 		balance = pBalance;
 	}
@@ -19,7 +40,7 @@ public class BankAccount {
 	public Person getOwner() {
 		return owner;
 	}
-	
+
 	// 파라미터 : 입금할 액수 (정수)
 	// 리턴 : 성공여부 (불린)
 	boolean deposit(int amount) {

@@ -5,7 +5,30 @@ public class Person {
 	private int age; //  해당 클래스 내에 age를 사용하고 return해주는 메소드를 추가해야함.
 	private int cashAmount;
 	private BankAccount account;
-	
+
+	// 생성자
+	public Person(String pName, int pAge) {
+		if (pAge < 0) {
+			age = 12;
+		} else {
+			age = pAge;
+		}
+		name = pName;
+	}
+	public Person(String pName, int pAge, int pCashAmount) {
+		if (pAge <0) {
+			age = 12;
+		} else {
+			age = pAge;
+		}
+		if (pCashAmount < 0) {
+			cashAmount = 0;
+		} else {
+			cashAmount = pCashAmount;
+		}
+		name = pName;
+	}
+
 	public void setName(String newName) {
 		name = newName;
 	}
