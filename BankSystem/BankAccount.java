@@ -5,36 +5,38 @@ public class BankAccount {
 	private Person owner;
 
 	// 생성자
-	public BankAccount(int pBalance) {
-		if (pBalance < 0) {
-			balance = 0;
+	public BankAccount(int balance) {
+		if (balance < 0) {
+			this.balance = 0;
 		} else {
-			balance = pBalance;
+			this.balance = balance;
 		}
 	}
-	public BankAccount(Person pOwner) {
-		owner = pOwner;
+	public BankAccount(Person owner) {
+		this.owner = owner;
 		balance = 0;
+		owner.setAccount(this); // BankDriver 에서 p1.setAccount(a1) 코드 대체
 	}
-	public BankAccount(int pBalance, Person pOwner) {
-		if (pBalance < 0) {
-			balance = 0;
+	public BankAccount(int balance, Person owner) {
+		if (balance < 0) {
+			this.balance = 0;
 		} else {
-			balance = pBalance;
+			this.balance = balance;
 		}
-		owner = pOwner;
+		this.owner = owner;
+		owner.setAccount(this); // BankDriver 에서 p1.setAccount(a1) 코드 대체
 	}
 
-	public void setBalance(int pBalance) {
-		balance = pBalance;
+	public void setBalance(int balance) {
+		this.balance = balance;
 	}
 	
 	public int getBalance() {
 		return balance;
 	}
 	
-	public void setOwner(Person pOwner) {
-		owner = pOwner;
+	public void setOwner(Person owner) {
+		this.owner = owner;
 	}
 	
 	public Person getOwner() {

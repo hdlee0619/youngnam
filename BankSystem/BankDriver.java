@@ -13,12 +13,6 @@ public class BankDriver {
 		a1.setBalance(100000);
 
 		BankAccount a2 = new BankAccount(500000, p2);
-		
-		// 두 객체의 관계 설정
-		p1.setAccount(a1);
-
-		// 두 객체의 관계 설정
-		p2.setAccount(a2);
 
 		// 입출금 테스트
 //		System.out.println(a2.deposit(30000)); // 30000원 입금

@@ -7,39 +7,37 @@ public class Person {
 	private BankAccount account;
 
 	// 생성자
-	public Person(String pName, int pAge) {
-		if (pAge < 0) {
-			age = 12;
-		} else {
-			age = pAge;
-		}
-		name = pName;
+	public Person(String name) {
+		this(name, 12, 0); // 12살을 기본나이로 설정, 초기 현금 보유액은 0으로 설정된 파라미터를 3번째 Person 생성자에 넘겨줌
 	}
-	public Person(String pName, int pAge, int pCashAmount) {
-		if (pAge <0) {
-			age = 12;
+	public Person(String name, int age) {
+		this(name, age, 0);
+	}
+	public Person(String name, int age, int cashAmount) {
+		if (age <0) {
+			this.age = 12;
 		} else {
-			age = pAge;
+			this.age = age;
 		}
-		if (pCashAmount < 0) {
-			cashAmount = 0;
+		if (cashAmount < 0) {
+			this.cashAmount = 0;
 		} else {
-			cashAmount = pCashAmount;
+			this.cashAmount = cashAmount;
 		}
-		name = pName;
+		this.name = name;
 	}
 
-	public void setName(String newName) {
-		name = newName;
+	public void setName(String name) {
+		this.name = name;
 	}
 	
 	public String getName() {
 		return name;
 	}
 	
-	public void setAge(int newAge) {
-		if (newAge >= 0) {
-			age = newAge;
+	public void setAge(int age) {
+		if (age >= 0) {
+			this.age = age;
 		}
 	}
 	
@@ -47,8 +45,8 @@ public class Person {
 		return age;
 	}
 
-	public void setCashAmount(int newCashAmount) {
-		cashAmount = newCashAmount;
+	public void setCashAmount(int cashAmount) {
+		this.cashAmount = cashAmount;
 	}
 	
 	public int getCashAmount() {
@@ -59,8 +57,8 @@ public class Person {
 		return account;
 	}
 	
-	public void setAccount(BankAccount pAccount) {
-		account = pAccount;
+	public void setAccount(BankAccount account) {
+		this.account = account;
 	}
 
 	public boolean transfer(Person to, int amount) {
